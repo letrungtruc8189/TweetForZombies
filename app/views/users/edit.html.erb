@@ -1,2 +1,9 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h1>Edit user</h1>
+<%= form_for(@user, method: :put) do |f| %>
+  Name: <%= f.text_field :name %><br />
+  Email : <%= f.text_field :email %><br />
+  Role: <%= f.text_area :role %><br />
+  <%= f.submit %>
+<% end %>
+<%= link_to 'Show', @user %> |
+<%= link_to 'Back', users_path %>
