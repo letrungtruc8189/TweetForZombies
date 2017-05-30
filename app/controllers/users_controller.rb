@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def new
-    @user = User.all
+    @user = User.new
 
   end
 
@@ -18,8 +18,9 @@ class UsersController < ApplicationController
   end
 
   def create
+    @user = User.create(user_params)
+    redirect_to users_path(@user)
   end
-
   def update
     @user = User.find(params[:id])
     @user.update(user_params)

@@ -1,2 +1,9 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h1>Create user</h1>
+#don't input any method, but it still know this is POST method? why?
+<%= form_for(@user) do |f| %>
+  Name: <%= f.text_field :name %><br />
+  password: <%= f.password_field :password %><br />
+  Email : <%= f.text_field :email %><br />
+  Role: <%= f.text_area :role %><br />
+  <%= f.submit %>
+<% end %>
