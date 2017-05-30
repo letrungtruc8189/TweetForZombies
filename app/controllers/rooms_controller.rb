@@ -29,7 +29,7 @@
 
       respond_to do |format|
         if @room.save
-          format.html { redirect_to @room, notice: 'Room was successfully created.' }
+          format.html { redirect_to rooms_path, notice: 'Room was successfully created.' }
           format.json { render :show, status: :created, location: @room }
         else
           format.html { render :new }
@@ -56,12 +56,8 @@
     # DELETE /rooms/1
     # DELETE /rooms/1.json
     def destroy
-      @room = Room.find(params[:id])
-      @room.destroy
-      respond_to do |format|
-        format.html { redirect_to rooms_url, notice: 'Room was successfully destroyed.' }
-        format.json { head :no_content }
-      end
+      @room = Room.find(params[:id]).destroy
+      redirect_to rooms_path
     end
 
     private
