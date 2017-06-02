@@ -1,7 +1,9 @@
 <h1>Edit user</h1>
-<%= form_for(@user) do |f| %>
+<%= form_for(@user, method: :put) do |f| %>
   Name: <%= f.text_field :name %><br />
   Email : <%= f.text_field :email %><br />
+  Password : <%= f.password_field :password %><br />
+  Password_confirmation : <%= f.password_field :password_confirmation %><br />
   Role: <%= f.text_area :role %><br />
   <%= f.submit %>
 <% end %>

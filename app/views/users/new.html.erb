@@ -2,7 +2,8 @@
 #don't input any method, but it still know this is POST method? why?
 <%= form_for(@user) do |f| %>
   Name: <%= f.text_field :name %><br />
-  password: <%= f.password_field :password %><br />
+  Password: <%= f.password_field :password %><br />
+  Password_confirmation : <%= f.password_field :password_confirmation %><br />
   Email : <%= f.text_field :email %><br />
   Role: <%= f.text_area :role %><br />
   <%= f.submit %>
