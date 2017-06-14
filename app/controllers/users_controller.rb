@@ -19,7 +19,14 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    redirect_to users_path
+    if @user.valid?
+      flash[:success] = "User is created successfully!"
+      redirect_to users_path
+    else
+      flash[:danger] = @user.errors.messages
+      render 'new'
+    end
+
   end
 
   def update

@@ -1,10 +1,34 @@
-<h1>Create user</h1>
+<h1 xmlns="http://www.w3.org/1999/html">Create user</h1>
 #don't input any method, but it still know this is POST method? why?
 <%= form_for(@user) do |f| %>
-  Name: <%= f.text_field :name %><br />
-  Password: <%= f.password_field :password %><br />
-  Password_confirmation : <%= f.password_field :password_confirmation %><br />
-  Email : <%= f.text_field :email %><br />
-  Role: <%= f.text_area :role %><br />
-  <%= f.submit %>
+    <div class="container-fluid">
+      <div class = 'row'>
+        <div class = 'col-4'>
+          <form>
+            <div class="form-group">
+              <%= f.label :name %>
+              <%= f.text_field :name, class: 'form-control'%>
+            </div>
+            <div class="form-group">
+              <%= f.label :password %>
+              <%= f.password_field :password, class: 'form-control'%>
+            </div>
+            <div class="form-group">
+              <%= f.label :password_confirmation %>
+              <%= f.password_field :password_confirmation, class: 'form-control'%>
+            </div>
+            <div class="form-group">
+              <%= f.label :email %>
+              <%= f.text_field :email, class: 'form-control'%>
+            </div>
+            <div class="form-group">
+              <%= f.label :role %>
+              <%= f.text_area :role %>
+            </div>
+            <%= f.submit 'Create', class: 'btn btn-primary'%>
+          </form>
+        </div>
+      </div>
+    </div>
+
 <% end %>
