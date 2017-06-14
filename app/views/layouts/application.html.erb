@@ -13,6 +13,9 @@
   <p>
     <%= link_to "log_out", signout_path, method: :delete %>
   </p>
+  <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
     <%= yield %>
   </div>
   </body>
