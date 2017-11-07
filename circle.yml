@@ -1,0 +1,9 @@
+dependencies:
+  pre:
+    - gem install bundler --pre
+
+deployment:
+  production:
+    branch: master
+    heroku:
+      appname:tweet-for-zombies 
